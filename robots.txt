@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://exemple.github.io/aix-capitale-etudiante/sitemap.xml
+Sitemap: https://paul13001.github.io/aix-capitale-etudiante/sitemap.xml
