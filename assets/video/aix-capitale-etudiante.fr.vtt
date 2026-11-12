@@ -1,20 +1,62 @@
 WEBVTT
 
 NOTE
-Sous-titres de la vidéo « Aix, capitale étudiante ».
-MODÈLE À COMPLÉTER : remplacer chaque texte par ce qui est réellement dit,
-avec les bons horaires. Deux lignes maximum par bloc, environ 40 caractères
-par ligne. Indiquer les sons importants entre crochets, ex. [Musique].
+Sous-titres de la vidéo « Aix, capitale étudiante » (version courte, 1 min 54).
+Vidéo d'origine : Direction de la communication de la Ville d'Aix-en-Provence.
+Les titres affichés à l'écran sont repris en haut de l'image (line:8%)
+pour ne pas les recouvrir. Les sons sont indiqués entre crochets.
+
+STYLE
+::cue {
+  background-color: rgba(0, 0, 0, 0.75);
+}
 
 1
-00:00:00.000 --> 00:00:04.000
-[Musique d'introduction]
+00:00:00.000 --> 00:00:03.000
+[Musique entraînante]
 
 2
-00:00:04.000 --> 00:00:08.000
-À COMPLÉTER : première phrase
-de la vidéo.
+00:00:03.000 --> 00:00:05.500 line:8%
+Aix-en-Provence,
+capitale étudiante
 
 3
-00:00:08.000 --> 00:00:12.000
-À COMPLÉTER : phrase suivante.
+00:00:12.000 --> 00:00:14.000 line:8%
+1re ville étudiante de France en 2024
+
+4
+00:00:19.500 --> 00:00:22.500 line:8%
+70 sites d'enseignement supérieur
+
+5
+00:00:27.500 --> 00:00:29.500 line:8%
+44 000 étudiants
+
+6
+00:00:35.000 --> 00:00:37.500 line:8%
+Une vie culturelle riche
+
+7
+00:00:50.000 --> 00:00:53.000 line:8%
+Des espaces sportifs ouverts à tous
+
+8
+00:01:02.000 --> 00:01:04.000 line:8%
+Plus de 100 km de pistes cyclables
+
+9
+00:01:10.000 --> 00:01:12.500 line:8%
+Des transports en commun accessibles
+
+10
+00:01:30.000 --> 00:01:31.500 line:8%
+Un conseil étudiant engagé
+
+11
+00:01:42.500 --> 00:01:45.500 line:8%
+Une vie nocturne animée
+
+12
+00:01:50.000 --> 00:01:54.500
+Production et réalisation : Direction de la communication
+de la Ville d'Aix-en-Provence – aixenprovence.fr/etudiants

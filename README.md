@@ -42,6 +42,9 @@ données structurées avec l'adresse du département informatique), CSS minifié
 
 - [ ] Remplacer `equipe@exemple.fr` (dans `index.html` et `assets/js/main.js`) par l'adresse de l'équipe.
 - [ ] Remplacer `https://exemple.github.io/aix-capitale-etudiante/` par l'adresse réelle du site (toutes les pages, `robots.txt`, `sitemap.xml`).
-- [ ] Ajouter la vidéo : `assets/video/aix-capitale-etudiante.mp4`, coupée à **moins de 2 minutes** (exigence du sujet ; viser 1 min 55 au plus) et compressée à **9 Mo au plus**, pour que le ZIP reste sous 10 Mo.
-- [ ] Écrire les vrais sous-titres dans `assets/video/aix-capitale-etudiante.fr.vtt`.
+- [x] Vidéo ajoutée : `assets/video/aix-capitale-etudiante.mp4`, 1 min 54, 960×540, 8 Mo.
+  Vidéo d'origine (2 min 45) de la Ville d'Aix-en-Provence ; passages retirés : 0:30 → 1:10 (études)
+  et 1:39 → 1:50 (nature), avec un court fondu sonore à chaque coupure.
+- [x] Sous-titres : `assets/video/aix-capitale-etudiante.fr.vtt` (titres affichés à l'écran, musique, générique).
+- [ ] Vérifier en écoutant la vidéo s'il y a une voix : si oui, ajouter ses paroles aux sous-titres.
 - [ ] Relire les contenus (chiffres, tarifs, lieux) sur les sites officiels.
