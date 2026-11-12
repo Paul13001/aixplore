@@ -42,6 +42,6 @@ données structurées avec l'adresse du département informatique), CSS minifié
 
 - [ ] Remplacer `equipe@exemple.fr` (dans `index.html` et `assets/js/main.js`) par l'adresse de l'équipe.
 - [ ] Remplacer `https://exemple.github.io/aix-capitale-etudiante/` par l'adresse réelle du site (toutes les pages, `robots.txt`, `sitemap.xml`).
-- [ ] Ajouter la vidéo : `assets/video/aix-capitale-etudiante.mp4`.
+- [ ] Ajouter la vidéo : `assets/video/aix-capitale-etudiante.mp4`, coupée à **moins de 2 minutes** (exigence du sujet ; viser 1 min 55 au plus) et compressée à **9 Mo au plus**, pour que le ZIP reste sous 10 Mo.
 - [ ] Écrire les vrais sous-titres dans `assets/video/aix-capitale-etudiante.fr.vtt`.
 - [ ] Relire les contenus (chiffres, tarifs, lieux) sur les sites officiels.
