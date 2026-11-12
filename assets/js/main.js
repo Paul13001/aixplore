@@ -10,7 +10,7 @@
     "use strict";
 
     // Address that receives the feedback e-mails (to replace with the team's address).
-    var FEEDBACK_EMAIL = "equipe@exemple.fr";
+    var FEEDBACK_EMAIL = "aixplore.contact@gmail.com";
 
     // Both stylesheets, as different as possible from each other.
     var STYLES = {

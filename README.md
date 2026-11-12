@@ -40,7 +40,7 @@ données structurées avec l'adresse du département informatique), CSS minifié
 
 ## À compléter avant le rendu
 
-- [ ] Remplacer `equipe@exemple.fr` (dans `index.html` et `assets/js/main.js`) par l'adresse de l'équipe.
+- [x] Adresse du formulaire : `aixplore.contact@gmail.com` (dans `index.html` et `assets/js/main.js`).
 - [x] Adresse du site : `https://paul13001.github.io/aix-capitale-etudiante/` (GitHub Pages), reportée dans toutes les pages, `robots.txt` et `sitemap.xml`.
 - [x] Vidéo ajoutée : `assets/video/aix-capitale-etudiante.mp4`, 1 min 54, 960×540, 8 Mo.
   Vidéo d'origine (2 min 45) de la Ville d'Aix-en-Provence ; passages retirés : 0:30 → 1:10 (études)
