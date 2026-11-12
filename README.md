@@ -46,5 +46,5 @@ données structurées avec l'adresse du département informatique), CSS minifié
   Vidéo d'origine (2 min 45) de la Ville d'Aix-en-Provence ; passages retirés : 0:30 → 1:10 (études)
   et 1:39 → 1:50 (nature), avec un court fondu sonore à chaque coupure.
 - [x] Sous-titres : `assets/video/aix-capitale-etudiante.fr.vtt` (titres affichés à l'écran, musique, générique).
-- [ ] Vérifier en écoutant la vidéo s'il y a une voix : si oui, ajouter ses paroles aux sous-titres.
+- [x] Son vérifié à l'écoute : musique seule, pas de voix (les sous-titres sont donc complets).
 - [ ] Relire les contenus (chiffres, tarifs, lieux) sur les sites officiels.
