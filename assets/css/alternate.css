@@ -1,0 +1,508 @@
+/* ==========================================================================
+   Aix, capitale étudiante – alternate stylesheet ("Nuit électrique" theme)
+   As different as possible from the default one: dark background,
+   neon yellow and cyan, monospace font, square corners, thick borders,
+   vertical menu on the left on large screens.
+   Source file: run `node tools/minify-css.mjs` to regenerate alternate.min.css.
+   ========================================================================== */
+
+/* ---------- Design tokens ---------- */
+:root {
+    --color-bg: #0d0d0d;
+    --color-surface: #1a1a1a;
+    --color-text: #f2f2f2;
+    --color-muted: #bdbdbd;
+    --color-primary: #ffe600;      /* neon yellow */
+    --color-accent: #00e5ff;       /* cyan */
+    --border: 3px solid var(--color-primary);
+    --font: "Courier New", Courier, monospace;
+    --sidebar-width: 15rem;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.15;
+}
+
+h1 {
+    font-size: 2.6rem;
+    margin: 0 0 1rem;
+    color: var(--color-primary);
+    text-shadow: 3px 3px 0 #ff2e88;
+}
+
+h2 {
+    display: inline-block;
+    margin: 3rem 0 1rem;
+    padding: 0.2rem 0.6rem;
+    background: var(--color-primary);
+    color: #000000;
+    font-size: 1.4rem;
+}
+
+h3 {
+    margin: 0 0 0.5rem;
+    color: var(--color-accent);
+    font-size: 1.1rem;
+}
+
+a {
+    color: var(--color-accent);
+}
+
+a:hover {
+    background: var(--color-accent);
+    color: #000000;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px dashed #ff2e88;
+    outline-offset: 3px;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -3rem;
+    padding: 0.5rem 1rem;
+    background: var(--color-primary);
+    color: #000000;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
+/* ---------- Header: fixed vertical sidebar on large screens ---------- */
+.site-header {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    overflow-y: auto;
+    border-right: var(--border);
+    background: #000000;
+    z-index: 50;
+}
+
+.header-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem 1rem;
+}
+
+.brand {
+    display: block;
+    color: var(--color-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.brand img {
+    display: block;
+    margin-bottom: 0.5rem;
+    -webkit-filter: grayscale(1) invert(1);
+    filter: grayscale(1) invert(1);
+}
+
+.menu-toggle {
+    display: none;
+    padding: 0.4rem 0.8rem;
+    border: var(--border);
+    background: #000000;
+    color: var(--color-primary);
+    font: inherit;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.main-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-nav a {
+    display: block;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #444444;
+    color: var(--color-text);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.main-nav a::before {
+    content: "> ";
+    color: var(--color-primary);
+}
+
+.main-nav a[aria-current="page"] {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.style-switch {
+    padding: 0.5rem;
+    border: var(--border);
+    color: var(--color-primary);
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* ---------- Main layout (shifted right of the sidebar) ---------- */
+main,
+.site-footer {
+    margin-left: var(--sidebar-width);
+}
+
+main {
+    max-width: 60rem;
+    padding: 2rem 2.5rem 4rem;
+}
+
+.hero,
+.page-intro {
+    padding: 2rem 0;
+    border-bottom: var(--border);
+}
+
+.lead {
+    color: var(--color-muted);
+    font-size: 1.1rem;
+}
+
+/* ---------- Buttons ---------- */
+.button {
+    display: inline-block;
+    margin: 0.25rem 0.5rem 0.25rem 0;
+    padding: 0.6rem 1.2rem;
+    border: var(--border);
+    border-radius: 0;
+    background: var(--color-primary);
+    color: #000000;
+    font: inherit;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-box-shadow: 4px 4px 0 #ff2e88;
+    box-shadow: 4px 4px 0 #ff2e88;
+}
+
+.button:hover {
+    background: #ff2e88;
+    color: #000000;
+}
+
+.button-ghost {
+    background: #000000;
+    color: var(--color-primary);
+}
+
+/* ---------- Cards: one per line, terminal style ---------- */
+.card-grid {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.card {
+    margin-bottom: 1rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid #444444;
+    border-left: 6px solid var(--color-accent);
+    background: var(--color-surface);
+}
+
+.card p {
+    margin: 0;
+}
+
+.tag {
+    display: inline-block;
+    margin-bottom: 0.4rem !important;
+    color: #ff2e88;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.tag::before {
+    content: "#";
+}
+
+/* ---------- Table of contents ---------- */
+.toc {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border: 1px dashed var(--color-accent);
+}
+
+.toc h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+}
+
+.toc ul,
+.timeline,
+.tips,
+.link-list {
+    padding-left: 1.2rem;
+    list-style: square;
+}
+
+.timeline li,
+.tips li,
+.link-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* ---------- Deals filter ---------- */
+.filter-bar p {
+    margin: 1rem 0 0.5rem;
+    text-transform: uppercase;
+}
+
+.chip {
+    margin: 0 0.4rem 0.5rem 0;
+    padding: 0.3rem 0.8rem;
+    border: 2px solid var(--color-accent);
+    border-radius: 0;
+    background: #000000;
+    color: var(--color-accent);
+    font: inherit;
+    cursor: pointer;
+}
+
+.chip[aria-pressed="true"] {
+    background: var(--color-accent);
+    color: #000000;
+}
+
+/* ---------- Video ---------- */
+.video-figure {
+    margin: 0;
+    padding: 0.5rem;
+    border: var(--border);
+}
+
+.video-figure video {
+    display: block;
+    width: 100%;
+    background: #000000;
+}
+
+.video-figure figcaption {
+    padding-top: 0.5rem;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+}
+
+/* ---------- Feedback form ---------- */
+.feedback-form {
+    max-width: 40rem;
+    padding: 1.5rem;
+    border: var(--border);
+    background: var(--color-surface);
+}
+
+.form-row {
+    margin: 0 0 1.2rem;
+}
+
+.form-row > label,
+.rating legend {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: var(--color-primary);
+    text-transform: uppercase;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 2px solid var(--color-accent);
+    border-radius: 0;
+    background: #000000;
+    color: var(--color-text);
+    font: inherit;
+}
+
+.rating {
+    padding: 0;
+    border: 0;
+}
+
+.rating label {
+    margin-right: 1rem;
+}
+
+.checkbox-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 0.6rem;
+}
+
+.hint {
+    margin: 0.3rem 0 0;
+    color: var(--color-muted);
+    font-size: 0.85rem;
+}
+
+.form-status {
+    margin: 1rem 0 0;
+    color: var(--color-accent);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    padding: 2rem 2.5rem;
+    border-top: var(--border);
+    color: var(--color-muted);
+    font-size: 0.9rem;
+}
+
+.site-footer address {
+    font-style: normal;
+}
+
+.back-to-top.is-floating {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    padding: 0.5rem 0.8rem;
+    border: var(--border);
+    background: #000000;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+/* ---------- Tablets and smartphones: sidebar becomes a top bar ---------- */
+@media (max-width: 900px) {
+    .site-header {
+        position: -webkit-sticky;
+        position: sticky;
+        bottom: auto;
+        width: auto;
+        border-right: 0;
+        border-bottom: var(--border);
+    }
+
+    .header-inner {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .brand {
+        margin-right: auto;
+    }
+
+    .brand img {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+        order: 4;
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    }
+
+    .js .main-nav:not(.is-open) {
+        display: none;
+    }
+
+    main,
+    .site-footer {
+        margin-left: 0;
+    }
+
+    main {
+        padding: 1rem 1rem 3rem;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    .site-footer {
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media print {
+    .site-header,
+    .filter-bar,
+    .feedback-form,
+    .back-to-top {
+        display: none;
+    }
+
+    main,
+    .site-footer {
+        margin-left: 0;
+    }
+}

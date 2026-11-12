@@ -1,0 +1,536 @@
+/* ==========================================================================
+   Aix, capitale étudiante – default stylesheet ("Provence" theme)
+   Light, warm colours (ochre, terracotta, olive), serif headings.
+   Source file: edit this one, then run `node tools/minify-css.mjs`
+   to regenerate style.min.css (the file actually loaded by the pages).
+   ========================================================================== */
+
+/* ---------- Design tokens ---------- */
+:root {
+    --color-bg: #fbf6ee;
+    --color-surface: #ffffff;
+    --color-text: #2b2620;
+    --color-muted: #5f564b;
+    --color-primary: #b3412b;       /* terracotta */
+    --color-primary-dark: #8a2f1e;
+    --color-accent: #5e6b2f;        /* olive */
+    --color-border: #e6dccb;
+    --radius: 12px;
+    --shadow: 0 2px 10px rgba(60, 40, 20, 0.08);
+    --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-title: Georgia, "Times New Roman", serif;
+    --max-width: 72rem;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-title);
+    line-height: 1.2;
+    color: var(--color-primary-dark);
+}
+
+h1 {
+    font-size: clamp(2rem, 6vw, 3.25rem);
+    margin: 0 0 0.5rem;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin: 2.5rem 0 1rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem;
+}
+
+a {
+    color: var(--color-primary);
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+}
+
+/* Visible focus for keyboard users */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---------- Skip link (accessibility) ---------- */
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -3rem;
+    padding: 0.5rem 1rem;
+    background: var(--color-primary-dark);
+    color: #ffffff;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
+/* ---------- Header and menu ---------- */
+.site-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(251, 246, 238, 0.92);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.header-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 0.75rem 1.5rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+}
+
+.brand {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: auto;
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--color-primary-dark);
+    text-decoration: none;
+}
+
+.menu-toggle {
+    display: none;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font: inherit;
+    cursor: pointer;
+}
+
+.main-nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-nav a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius);
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    background: var(--color-border);
+}
+
+/* Current page */
+.main-nav a[aria-current="page"] {
+    background: var(--color-primary);
+    color: #ffffff;
+}
+
+.style-switch {
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+/* ---------- Main layout ---------- */
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1.5rem 1rem 3rem;
+}
+
+.hero,
+.page-intro {
+    padding: 3rem 0 1rem;
+}
+
+.hero {
+    text-align: center;
+}
+
+.lead {
+    max-width: 44rem;
+    font-size: 1.2rem;
+    color: var(--color-muted);
+}
+
+.hero .lead {
+    margin: 0 auto 1.5rem;
+}
+
+/* ---------- Buttons ---------- */
+.button {
+    display: inline-block;
+    margin: 0.25rem;
+    padding: 0.7rem 1.3rem;
+    border: 2px solid var(--color-primary);
+    border-radius: 999px;
+    background: var(--color-primary);
+    color: #ffffff;
+    font: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background: var(--color-primary-dark);
+    color: #ffffff;
+}
+
+.button-ghost {
+    background: transparent;
+    color: var(--color-primary);
+}
+
+/* ---------- Cards ---------- */
+.card-grid {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.card {
+    margin-bottom: 1rem;
+    padding: 1.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    -webkit-box-shadow: var(--shadow);
+    box-shadow: var(--shadow);
+}
+
+.card-grid .card {
+    margin-bottom: 0;
+}
+
+.card p {
+    margin: 0;
+}
+
+.tag {
+    display: inline-block;
+    margin-bottom: 0.5rem !important;
+    padding: 0.1rem 0.6rem;
+    border-radius: 999px;
+    background: var(--color-accent);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* ---------- In-page table of contents ---------- */
+.toc {
+    padding: 1rem 1.25rem;
+    border-left: 4px solid var(--color-accent);
+    background: var(--color-surface);
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.toc h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+.toc ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.timeline,
+.tips {
+    padding-left: 1.2rem;
+}
+
+.timeline li,
+.tips li {
+    margin-bottom: 0.5rem;
+}
+
+/* ---------- Deals filter ---------- */
+.filter-bar {
+    margin-bottom: 1rem;
+}
+
+.filter-bar p {
+    margin: 0 0 0.5rem;
+    font-weight: 600;
+}
+
+.chip {
+    margin: 0 0.25rem 0.5rem 0;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--color-accent);
+    border-radius: 999px;
+    background: var(--color-surface);
+    color: var(--color-accent);
+    font: inherit;
+    cursor: pointer;
+}
+
+.chip[aria-pressed="true"] {
+    background: var(--color-accent);
+    color: #ffffff;
+}
+
+/* ---------- Links page ---------- */
+.link-list {
+    padding-left: 1.2rem;
+}
+
+.link-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* ---------- Video ---------- */
+.video-figure {
+    margin: 0;
+}
+
+.video-figure video {
+    display: block;
+    width: 100%;
+    border-radius: var(--radius);
+    background: #000000;
+}
+
+.video-figure figcaption {
+    margin-top: 0.5rem;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+}
+
+/* ---------- Feedback form ---------- */
+.feedback-form {
+    max-width: 40rem;
+    padding: 1.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+}
+
+.form-row {
+    margin: 0 0 1.1rem;
+}
+
+.form-row > label,
+.rating legend {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid #b9ab95;
+    border-radius: 8px;
+    background: #ffffff;
+    color: var(--color-text);
+    font: inherit;
+}
+
+/* Feedback after the visitor has typed something */
+input:user-invalid,
+textarea:user-invalid {
+    border-color: #b00020;
+}
+
+.rating {
+    padding: 0;
+    border: 0;
+}
+
+.rating label {
+    margin-right: 1rem;
+    font-weight: 400;
+}
+
+.checkbox-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 0.6rem;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.checkbox-row input {
+    margin-top: 0.35rem;
+}
+
+.hint {
+    margin: 0.3rem 0 0;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+}
+
+.form-status {
+    margin: 1rem 0 0;
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    padding: 2rem 1rem;
+    border-top: 1px solid var(--color-border);
+    background: #f3eadb;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.site-footer address {
+    font-style: normal;
+}
+
+/* Floating "back to top" link, shown by main.js after scrolling */
+.back-to-top.is-floating {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    padding: 0.6rem 0.9rem;
+    border-radius: 999px;
+    background: var(--color-primary);
+    color: #ffffff;
+    text-decoration: none;
+    -webkit-box-shadow: var(--shadow);
+    box-shadow: var(--shadow);
+}
+
+/* ---------- Tablets ---------- */
+@media (max-width: 900px) {
+    .style-switch {
+        -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+        order: 3;
+    }
+}
+
+/* ---------- Smartphones: collapsible menu ---------- */
+@media (max-width: 700px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    }
+
+    .main-nav ul {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    /* Hidden only when JavaScript is active (class set by main.js) */
+    .js .main-nav:not(.is-open) {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 1.5rem;
+    }
+
+    .feedback-form {
+        padding: 1rem;
+    }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .button {
+        -webkit-transition: none;
+        transition: none;
+    }
+}
+
+/* ---------- Print: keep only the content ---------- */
+@media print {
+    .site-header,
+    .filter-bar,
+    .feedback-form,
+    .back-to-top {
+        display: none;
+    }
+}
