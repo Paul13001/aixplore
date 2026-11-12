@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Aix, capitale étudiante – main script (loaded on every page with "defer")
+   Aixplore – main script (loaded on every page with "defer")
    1. Style switch (swaps the stylesheet, choice remembered)
    2. Mobile menu
    3. Floating "back to top" link
@@ -133,7 +133,7 @@
             }
             var data = new FormData(form);
             var name = String(data.get("name")).trim();
-            var subject = "[Aix, capitale étudiante] Avis de " + name;
+            var subject = "[Aixplore] Avis de " + name;
             var body = [
                 "Nom : " + name,
                 "E-mail : " + data.get("email"),

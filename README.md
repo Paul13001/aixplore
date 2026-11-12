@@ -1,6 +1,6 @@
-# Aix, capitale étudiante
+# Aixplore
 
-Site statique (HTML, CSS, JavaScript, sans base de données) : guide de la vie étudiante à Aix-en-Provence.
+Anciennement « Aix, capitale étudiante ». Site statique (HTML, CSS, JavaScript, sans base de données) : guide de la vie étudiante à Aix-en-Provence.
 Projet « Développement d'interfaces Web » – IUT d'Aix-Marseille, 2026.
 
 ## Pages
