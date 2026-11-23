@@ -20,6 +20,10 @@
     --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     --font-title: Georgia, "Times New Roman", serif;
     --max-width: 72rem;
+    /* Sticker buttons, same colours as the logo */
+    --btn-fill: #2340d9;            /* electric blue */
+    --btn-shadow: #ff5fa2;          /* pink */
+    --btn-ink: #1d1b19;
 }
 
 /* ---------- Base ---------- */
@@ -186,10 +190,13 @@ video {
     background: var(--color-border);
 }
 
-/* Current page */
+/* Current page: small sticker, like the buttons */
 .main-nav a[aria-current="page"] {
-    background: var(--color-primary);
+    border: 2px solid var(--btn-ink);
+    background: var(--btn-fill);
     color: #ffffff;
+    -webkit-box-shadow: 3px 3px 0 var(--btn-shadow);
+    box-shadow: 3px 3px 0 var(--btn-shadow);
 }
 
 .style-switch {
@@ -223,31 +230,46 @@ main {
     margin: 0 auto 1.5rem;
 }
 
-/* ---------- Buttons ---------- */
+/* ---------- Buttons: "sticker" style (pill, dark outline, solid pink shadow) ---------- */
 .button {
     display: inline-block;
-    margin: 0.25rem;
-    padding: 0.7rem 1.3rem;
-    border: 2px solid var(--color-primary);
+    margin: 0.35rem;
+    padding: 0.75rem 1.5rem;
+    border: 2.5px solid var(--btn-ink);
     border-radius: 999px;
-    background: var(--color-primary);
+    background: var(--btn-fill);
     color: #ffffff;
     font: inherit;
-    font-weight: 600;
+    font-weight: 800;
     text-decoration: none;
     cursor: pointer;
-    -webkit-transition: background-color 0.2s;
-    transition: background-color 0.2s;
+    -webkit-box-shadow: 5px 5px 0 var(--btn-shadow);
+    box-shadow: 5px 5px 0 var(--btn-shadow);
+    -webkit-transition: -webkit-transform 0.12s, -webkit-box-shadow 0.12s;
+    transition: transform 0.12s, box-shadow 0.12s;
 }
 
+/* Lifts on hover… */
 .button:hover {
-    background: var(--color-primary-dark);
     color: #ffffff;
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+    -webkit-box-shadow: 7px 7px 0 var(--btn-shadow);
+    box-shadow: 7px 7px 0 var(--btn-shadow);
 }
 
-.button-ghost {
-    background: transparent;
-    color: var(--color-primary);
+/* …and sinks when pressed */
+.button:active {
+    -webkit-transform: translate(3px, 3px);
+    transform: translate(3px, 3px);
+    -webkit-box-shadow: 2px 2px 0 var(--btn-shadow);
+    box-shadow: 2px 2px 0 var(--btn-shadow);
+}
+
+.button-ghost,
+.button-ghost:hover {
+    background: #ffffff;
+    color: var(--btn-fill);
 }
 
 /* ---------- Cards ---------- */
@@ -329,18 +351,21 @@ main {
 }
 
 .chip {
-    margin: 0 0.25rem 0.5rem 0;
-    padding: 0.4rem 0.9rem;
-    border: 1px solid var(--color-accent);
+    margin: 0 0.4rem 0.6rem 0;
+    padding: 0.4rem 0.95rem;
+    border: 2px solid var(--btn-ink);
     border-radius: 999px;
     background: var(--color-surface);
-    color: var(--color-accent);
+    color: var(--btn-ink);
     font: inherit;
+    font-weight: 700;
     cursor: pointer;
+    -webkit-box-shadow: 3px 3px 0 var(--btn-shadow);
+    box-shadow: 3px 3px 0 var(--btn-shadow);
 }
 
 .chip[aria-pressed="true"] {
-    background: var(--color-accent);
+    background: var(--btn-fill);
     color: #ffffff;
 }
 
@@ -465,12 +490,14 @@ textarea:user-invalid {
     right: 1rem;
     bottom: 1rem;
     padding: 0.6rem 0.9rem;
+    border: 2px solid var(--btn-ink);
     border-radius: 999px;
-    background: var(--color-primary);
+    background: var(--btn-fill);
     color: #ffffff;
+    font-weight: 700;
     text-decoration: none;
-    -webkit-box-shadow: var(--shadow);
-    box-shadow: var(--shadow);
+    -webkit-box-shadow: 3px 3px 0 var(--btn-shadow);
+    box-shadow: 3px 3px 0 var(--btn-shadow);
 }
 
 /* ---------- Tablets ---------- */

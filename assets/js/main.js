@@ -15,8 +15,8 @@
     // Both stylesheets, as different as possible from each other.
     var STYLES = {
         // "label" = text of the link, i.e. the style you switch TO.
-        default: { href: "assets/css/style.min.css", label: "Passer au style « Nuit électrique »" },
-        alternate: { href: "assets/css/alternate.min.css", label: "Passer au style « Provence »" }
+        default: { href: "assets/css/style.min.css?v=3", label: "Passer au style « Nuit électrique »" },
+        alternate: { href: "assets/css/alternate.min.css?v=3", label: "Passer au style « Provence »" }
     };
     var STORAGE_KEY = "aix-style";
 
