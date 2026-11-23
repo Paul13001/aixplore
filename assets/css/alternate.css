@@ -145,9 +145,9 @@ video {
 
 .brand img {
     display: block;
-    margin-bottom: 0.5rem;
-    -webkit-filter: grayscale(1) invert(1);
-    filter: grayscale(1) invert(1);
+    width: 100%;
+    max-width: 12rem;
+    height: auto;
 }
 
 .menu-toggle {
@@ -456,7 +456,7 @@ textarea {
     }
 
     .brand img {
-        display: none;
+        width: 7.5rem;
     }
 
     .menu-toggle {

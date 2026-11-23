@@ -150,6 +150,7 @@ video {
     font-size: 1.15rem;
     color: var(--color-primary-dark);
     text-decoration: none;
+    line-height: 0;
 }
 
 .menu-toggle {
